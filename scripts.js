@@ -56,3 +56,16 @@ numbers.forEach((button) => {
         screen.textContent += e.target.innerText
     })
 })
+
+const operators = document.querySelectorAll('.op');
+operators.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        screen.textContent += ` ${e.target.innerText} `
+    })
+})
+
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+    return screen.textContent = ''
+})
+
