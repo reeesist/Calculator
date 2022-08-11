@@ -1,3 +1,7 @@
+const screen = document.querySelector('.screen');
+    screen.textContent = ""
+
+
 function add(a, b) {
     return sum = a + b
 }
