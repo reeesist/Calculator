@@ -70,3 +70,10 @@ clear.addEventListener('click', () => {
     clean()
 })
 
+
+const equal = document.querySelector('.button14');
+equal.addEventListener('click', () => {
+    screen1.textContent = '';
+    screen.textContent = '';
+    screen1.textContent = operate(previousNum, currentNum, operator)
+})
