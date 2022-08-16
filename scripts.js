@@ -58,8 +58,15 @@ operators.forEach((button) => {
     })
 })
 
+function clean() {
+    screen.textContent = '';
+    screen1.textContent = '';
+    currentNum = 0;
+    previousNum = 0;
+}
+
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
-    return screen.textContent = ''
+    clean()
 })
 
