@@ -1,7 +1,7 @@
 let screen = document.querySelector('.screen');
 let screen1 = document.querySelector('.screen1');
-    let currentNum = 0
-    let previousNum = 0
+    let currentNum = ''
+    let previousNum = ''
     let operator = ''
 
 function add(a, b) {
@@ -60,9 +60,9 @@ operators.forEach((button) => {
 
 function clean() {
     screen.textContent = '';
-    screen1.textContent = '';
-    currentNum = 0;
-    previousNum = 0;
+    screen1.textContent = '0';
+    currentNum = '';
+    previousNum = '';
 }
 
 const clear = document.querySelector('.clear');
