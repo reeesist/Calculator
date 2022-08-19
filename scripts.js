@@ -5,7 +5,7 @@ let screen1 = document.querySelector('.screen1');
     let operator = ''
 
 function add(a, b) {
-    return sum = a + b
+    return sum = Number(a) + Number(b)
 }
 function subtract(a, b) {
     return sum = a - b
@@ -30,6 +30,16 @@ function operate(a, b, operator) {
     }
 }
 
+// function operate(a, b, operator) {
+//     if (operator === "+") {
+//         return Number(a) + Number(b)
+//     } else if (operator === '-') {
+//         return subtract(a, b);
+//     } else if (operator === '*') {
+//        return multiply(a, b)
+//     } else if ()
+// }
+
 function handleNumbers(number) {
     currentNum += number;
     screen1.textContent = currentNum
@@ -39,7 +49,7 @@ function handleOp(op) {
     operator = op;
     previousNum = currentNum;
     screen.textContent = previousNum + " " + operator;
-    currentNum = '';
+    currentNum = "";
     screen1.textContent = '';
 }
 
