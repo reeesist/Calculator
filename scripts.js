@@ -30,16 +30,6 @@ function operate(a, b, operator) {
     }
 }
 
-// function operate(a, b, operator) {
-//     if (operator === "+") {
-//         return Number(a) + Number(b)
-//     } else if (operator === '-') {
-//         return subtract(a, b);
-//     } else if (operator === '*') {
-//        return multiply(a, b)
-//     } else if ()
-// }
-
 function handleNumbers(number) {
     currentNum += number;
     screen1.textContent = currentNum
