@@ -5,16 +5,16 @@ let screen1 = document.querySelector('.screen1');
     let operator = ''
 
 function add(a, b) {
-    return sum = Number(a) + Number(b)
+    return previousNum = Number(a) + Number(b)
 }
 function subtract(a, b) {
-    return sum = a - b
+    return previousNum = a - b
 }
 function multiply(a, b) {
-    return sum = a * b
+    return previousNum = a * b
 }
 function divide(a, b) {
-    return sum = a / b
+    return previousNum = a / b
 }
 
 function operate(a, b, operator) {
@@ -35,14 +35,6 @@ function handleNumbers(number) {
     screen1.textContent = currentNum
 }
 
-function handleOp(op) {
-    operator = op;
-    previousNum = currentNum;
-    screen.textContent = previousNum + " " + operator;
-    currentNum = "";
-    screen1.textContent = '';
-}
-
 const numbers = document.querySelectorAll('.num')
 
 numbers.forEach((button) => {
@@ -51,12 +43,28 @@ numbers.forEach((button) => {
     })
 })
 
+function handleOp(op) {
+    if (previousNum !== '' && currentNum !== '') { 
+        screen.textContent = operate(previousNum, currentNum, operator)
+        operator = op;
+        screen1.textContent = ''
+        currentNum = ''
+    } else {
+        operator = op;
+        previousNum = currentNum;
+        screen.textContent = previousNum
+        currentNum = "";
+        screen1.textContent = '';
+    }}
+
 const operators = document.querySelectorAll('.op');
 operators.forEach((button) => { 
     button.addEventListener('click', (e) => { 
     handleOp(e.target.textContent)
     })
 })
+
+// cleans everything
 
 function clean() {
     screen.textContent = '';
@@ -70,10 +78,12 @@ clear.addEventListener('click', () => {
     clean()
 })
 
+// equal
 
 const equal = document.querySelector('.button14');
 equal.addEventListener('click', () => {
     screen1.textContent = '';
     screen.textContent = '';
-    screen1.textContent = operate(previousNum, currentNum, operator)
+    screen.textContent = operate(previousNum, currentNum, operator)
+    currentNum = ''
 })
