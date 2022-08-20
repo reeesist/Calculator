@@ -100,3 +100,11 @@ del.addEventListener('click', () => {
    currentNum = currentNum.slice(0, -1)
    screen1.textContent = screen1.textContent.slice(0, -1)
 })
+
+decimal = document.querySelector('.decimal')
+decimal.addEventListener('click', (e) => {
+    if (screen1.textContent.includes('.') === true) {
+        return 
+       } else handleNumbers(e.target.textContent)
+})
+
