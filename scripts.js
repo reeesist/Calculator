@@ -14,8 +14,11 @@ function multiply(a, b) {
     return previousNum = a * b
 }
 function divide(a, b) {
+    if (currentNum <= 0) {
+        return previousNum = 'what you doing, huh?'
+    } else {
     return previousNum = a / b
-}
+}}
 
 function operate(a, b, operator) {
     switch (operator) {
@@ -91,3 +94,9 @@ equal.addEventListener('click', () => {
     screen.textContent = operate(previousNum, currentNum, operator)
     currentNum = ''
 }})
+
+del = document.querySelector('.del')
+del.addEventListener('click', () => {
+   currentNum = currentNum.slice(0, -1)
+   screen1.textContent = screen1.textContent.slice(0, -1)
+})
