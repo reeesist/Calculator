@@ -3,6 +3,7 @@ let screen1 = document.querySelector('.screen1');
     let currentNum = ''
     let previousNum = ''
     let operator = ''
+    let op = ''
 
 function add(a, b) {
     return previousNum = Number(a) + Number(b)
@@ -50,20 +51,23 @@ function handleOp(op) {
     if (previousNum !== '' && currentNum !== '') { 
         screen.textContent = operate(previousNum, currentNum, operator)
         operator = op;
-        screen1.textContent = ''
+        op = ''
+        screen1.textContent = '0'
         currentNum = ''
     } else {
         operator = op;
         previousNum = currentNum;
         screen.textContent = previousNum
         currentNum = "";
-        screen1.textContent = '';
+        screen1.textContent = '0';
     }}
 
 const operators = document.querySelectorAll('.op');
 operators.forEach((button) => { 
     button.addEventListener('click', (e) => { 
+        if (op === '' && currentNum !== '') {
     handleOp(e.target.textContent)
+        } else return
     })
 })
 
