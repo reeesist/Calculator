@@ -71,6 +71,7 @@ function clean() {
     screen1.textContent = '0';
     currentNum = '';
     previousNum = '';
+    operator = ''
 }
 
 const clear = document.querySelector('.clear');
