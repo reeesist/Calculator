@@ -83,8 +83,11 @@ clear.addEventListener('click', () => {
 
 const equal = document.querySelector('.button14');
 equal.addEventListener('click', () => {
+    if (currentNum !== '' && previousNum == '' || currentNum === '' && previousNum !== '') {
+        return
+    } else {
     screen1.textContent = '';
     screen.textContent = '';
     screen.textContent = operate(previousNum, currentNum, operator)
     currentNum = ''
-})
+}})
